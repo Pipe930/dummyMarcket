@@ -1,0 +1,172 @@
+<ion-menu contentId="main-content" [type]="'overlay'">
+  <ion-header>
+    <ion-toolbar color="tertiary">
+      <ion-menu-toggle slot="end">
+        <ion-button fill="clear" color="dark">
+          <ion-icon name="chevron-back-outline" slot="icon-only"></ion-icon>
+        </ion-button>
+      </ion-menu-toggle>
+      <ion-title>
+        Jummy Marcket
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+    <ion-buttons>
+      <ion-button
+      color="danger"
+      fill="outline"
+      shape="round"
+      (click)="cerrarSesion()"
+      >
+        Cerrar Sesion
+        <ion-icon name="exit-outline" slot="end"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-list [inset]="true">
+      <ion-item
+      button
+      detail="true"
+      [routerLink]="['/products']"
+      >
+        <ion-icon name="bag-outline" slot="start"></ion-icon>
+        <ion-label>
+          Productos
+        </ion-label>
+      </ion-item>
+      <ion-item
+      button
+      detail="true"
+      [routerLink]="['/cart']"
+      >
+        <ion-icon name="cart-outline" slot="start"></ion-icon>
+        <ion-label>Carrito</ion-label>
+      </ion-item>
+      <ion-item
+      button
+      detail="true"
+      [routerLink]="['/posts']"
+      >
+        <ion-icon name="document-text-outline" slot="start"></ion-icon>
+        <ion-label>Posts</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Dark</ion-label>
+        <ion-toggle
+        slot="end"
+        [checked]="activo"
+        (click)="evento()"
+        ></ion-toggle>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+<div class="ion-page" id="main-content">
+  <ion-header>
+    <ion-toolbar [color]="colorConfig">
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Inicio</ion-title>
+      <ion-buttons slot="end">
+        <ion-button [color]="colorButton" [routerLink]="['/profile', idUsuario]">
+          <ion-icon name="person-circle-outline" size="large"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+    <ion-header class="encabesado">
+      <ion-label>
+        <h1>
+          Jummy Marcket
+        </h1>
+        <p>
+          Bienvenido a la aplicacion Jummy Marcket donde ofrecemos productos de distintas categorias con ofertas por tiempo limitado
+        </p>
+      </ion-label>
+      <ion-button
+      class="btn-nosotros"
+      fill="outline"
+      color="secondary"
+      >Nosotros</ion-button>
+    </ion-header>
+    <ion-title class="ofrecemos">
+      ¿Que Ofrecemos?
+    </ion-title>
+    <div class="container-cards">
+      <ion-card class="card">
+        <img alt="Silhouette of mountains" src="https://dlegaonline.es/wp-content/uploads/que-es-un-Market-place.jpg" />
+        <ion-card-header>
+          <ion-card-title>Ventas de Productos</ion-card-title>
+          <ion-card-subtitle>De distitnas categorias</ion-card-subtitle>
+        </ion-card-header>
+
+        <ion-card-content>
+          <ion-label>
+            <h2>
+              Descripcion:
+            </h2>
+            <p>
+              Tenemos una seccion donde puedes ver los distintos productos que ofrecemos de distintas categorias y precios
+            </p>
+          </ion-label>
+        </ion-card-content>
+      </ion-card>
+      <ion-card class="card">
+        <img alt="que ofrecemos" src="https://img.freepik.com/vector-gratis/servicio-compras-online-envio-domicilio_40876-2337.jpg?w=2000" />
+        <ion-card-header>
+          <ion-card-title>Envio a Domicilio</ion-card-title>
+          <ion-card-subtitle>Por retiro en tienda o a domicilio</ion-card-subtitle>
+        </ion-card-header>
+
+        <ion-card-content>
+          <ion-label>
+            <h2>
+              Descripcion:
+            </h2>
+            <p>
+              Ofrecemos envios a domicilio o en tienda con un seguimiento de tu producto a travez de nuestra aplicacion
+            </p>
+          </ion-label>
+        </ion-card-content>
+      </ion-card>
+    </div>
+    <div class="container-contacto">
+      <ion-list>
+        <ion-list-header>
+          <ion-label>
+            <h2>
+              Contactanos
+            </h2>
+          </ion-label>
+        </ion-list-header>
+        <form novalidate [formGroup]="formularioContacto">
+          <ion-item>
+            <ion-label position="floating">Correo</ion-label>
+            <ion-input type="email" formControlName="correo"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Mensaje</ion-label>
+            <ion-textarea formControlName="mensaje"></ion-textarea>
+          </ion-item>
+          <ion-button
+          fill="outline"
+          color="secondary"
+          expand="block"
+          type="submit"
+          [disabled]="formularioContacto.invalid"
+          >Enviar</ion-button>
+        </form>
+      </ion-list>
+    </div>
+  </ion-content>
+
+  <ion-footer>
+    <ion-toolbar [color]="colorConfig">
+      <ion-title class="footer-text">
+        Develop and designed by Felipe Sanchez. ©2022. all rights reserved
+      </ion-title>
+    </ion-toolbar>
+  </ion-footer>
+</div>

@@ -1,0 +1,64 @@
+.encabesado{
+
+  padding: 250px 10px;
+  background-image: url(https://jpsystems.pe/wp-content/uploads/2020/02/7pasosclavesparatuminimarket.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-blend-mode: darken;
+  background-position: center;
+  background-color: rgba(0, 0, 0, 0.405);
+  text-align: center;
+  border-radius: 20px;
+
+  ion-label{
+    text-align: center;
+    h1{
+      font-size: 40px;
+      font-weight: 900;
+    }
+  }
+}
+
+.footer-text{
+  font-size: 15px;
+}
+
+.container-cards{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 5px;
+  margin-bottom: 50px;
+  border-bottom: 3px solid #D3D3D3;
+
+  .card{
+    width: 90%;
+    max-width: 550px;
+    margin: 20px auto;
+  }
+}
+
+.ofrecemos{
+  font-size: 25px;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.container-contacto{
+  ion-list{
+    text-align: center;
+    padding: 20px;
+    width: 90%;
+    max-width: 500px;
+    margin: auto;
+    border-radius: 10px;
+    ion-list-header{
+      ion-label{
+        h2{
+          font-size: 25px;
+          padding: 10px 0;
+          font-weight: 900;
+        }
+      }
+    }
+  }
+}

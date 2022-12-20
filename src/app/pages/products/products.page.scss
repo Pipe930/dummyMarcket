@@ -1,0 +1,17 @@
+ion-card-header.ios {
+  display: flex;
+  flex-flow: column-reverse;
+}
+
+.container-cards{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  justify-content: center;
+
+  ion-card{
+    width: 380px;
+    height: 90%;
+  }
+}

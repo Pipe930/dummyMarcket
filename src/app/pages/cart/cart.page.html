@@ -1,0 +1,78 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Carrito</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list class="cart ion-padding" [inset]="true">
+    <ion-list-header>
+      <ion-label class="ion-text-center">
+        <h1>
+          Carrito
+        </h1>
+      </ion-label>
+    </ion-list-header>
+    <ion-list *ngFor="let productos of listaProductos">
+      <ion-list-header>
+        <ion-label>
+          <h2>{{productos.title | uppercase}}</h2>
+        </ion-label>
+        <ion-button
+        color="danger"
+        (click)="buttonEliminar()"
+        >Eliminar</ion-button>
+      </ion-list-header>
+      <ion-item>
+        <ion-label>
+          <h3>
+            Precio
+          </h3>
+          <p>
+            ${{productos.price}}
+          </p>
+        </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>
+          <h3>
+            Cantidad
+          </h3>
+          <p>
+            {{productos.quantity}}
+          </p>
+        </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>
+          <h3>
+            Total
+          </h3>
+          <p>
+            ${{productos.total}}
+          </p>
+        </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>
+          <h3>
+            Descuento
+          </h3>
+          <p>
+            %{{productos.discountPercentage}}
+          </p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+    <ion-button
+    *ngIf="listaProductos"
+    color="success"
+    expand="block"
+    fill="outline"
+    >Comprar</ion-button>
+  </ion-list>
+
+</ion-content>
